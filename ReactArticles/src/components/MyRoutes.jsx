@@ -7,6 +7,7 @@ import Footer from './Footer';
 import SinglePost from './SinglePost';
 import Main from './Main';
 import State from './State';
+import NewPost from './NewPost';
 
 function MyRoutes() {
   return (
@@ -17,6 +18,7 @@ function MyRoutes() {
         <Route path='/about' element={<About />} />
         <Route path='/post/:id' element={<SinglePost />} />
         <Route path='/test' element={<State />} />
+        <Route path='/newpost' element={<NewPost />} />
       </Routes>
       <Footer />
     </>

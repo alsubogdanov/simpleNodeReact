@@ -47,6 +47,9 @@ function MainPage() {
       <section className='articles'>
         <div className='container'>
           <h1 className='main-page-title'>Articles</h1>
+          <div className='post__btns mt4 mb2'>
+            <Link to='newpost'>new Post</Link>
+          </div>
           <div className='msg'>{msg}</div>
 
           <div className='articles-container'>
