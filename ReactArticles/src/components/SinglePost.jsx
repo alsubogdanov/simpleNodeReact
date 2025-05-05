@@ -1,14 +1,26 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import '../assets/styles/SinglePost.css';
 
 function SinglePost() {
-  const post = {
-    id: 1,
-    title: 'Understanding JavaScript',
-    content:
-      'JavaScript is a versatile programming language used for both front-end and back-end development.',
-    img: 'https://loremflickr.com/200/200?random=1',
+  const [post, setPost] = useState({});
+
+  const { id } = useParams(); // get ID from URL
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = () => {
+    axios
+      .get(`/article/${id}`)
+      .then(res => {
+        setPost(res.data);
+        console.log(res.data); // Data from API
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
   return (
